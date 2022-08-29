@@ -1,0 +1,55 @@
+<template>
+  <div class="layout">
+    <Layout class="container">
+        <Header>
+            <h2>WindSpeak</h2>
+        </Header>
+        <Layout class="center">
+            <Sider>
+                <Menu>
+                  <MenuGroup title="菜单选项">
+                      <MenuItem name="1">
+                          <Icon type="md-barcode" />
+                          WebSocket
+                      </MenuItem>
+                      <MenuItem name="1">
+                          <Icon type="md-camera" />
+                          数据可视化
+                      </MenuItem>
+                  </MenuGroup>
+                </Menu>
+            </Sider>
+            <Content class="content">Content</Content>
+        </Layout>
+        <Footer>Footer</Footer>
+    </Layout>
+  </div>
+</template>
+
+<script>
+  export default {
+    name: 'HomePage',
+  }
+</script>
+
+<style lang="scss" scoped>
+.layout {
+  // width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+}
+::v-deep .ivu-menu {
+  width: 200px !important;
+  height: 100%;
+}
+::v-deep .ivu-layout-header  {
+  background-color: #ffffff;
+  text-align: center;
+}
+::v-deep .ivu-layout-sider {
+  background-color: #ffffff;
+  // text-align: center;
+  height: 100%;
+  width: 100%;
+}
+</style>
