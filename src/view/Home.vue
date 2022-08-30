@@ -1,5 +1,6 @@
 <template>
   <div class="layout">
+    <!-- <div id="test"></div> -->
     <Layout class="container">
         <Header>
             <h2>WindSpeak</h2>
@@ -27,9 +28,12 @@
 </template>
 
 <script>
+  import Test from './Test.vue'
   export default {
     name: 'HomePage',
   }
+  new Test().$mount('#test');    
+  // 只能挂载在根节点。
 </script>
 
 <style lang="scss" scoped>

@@ -3,6 +3,10 @@ import VueRouter from 'vue-router'
 
 const routes = [
     {
+      path: "/",
+      redirect: "/login"
+    },
+    {
       path: "/home",
       name: 'HomePage',
       component: () => import('../view/Home.vue')

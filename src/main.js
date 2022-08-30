@@ -8,7 +8,13 @@ Vue.config.productionTip = false
 
 Vue.use(VueRouter);
 Vue.use(ViewDesign);
+(function(){
+  // console.log("eeee");
+  alert('eee')
+})()
 new Vue({
   render: h => h(App),
   router
 }).$mount('#app')
+
+
