@@ -8,19 +8,33 @@
         <Layout class="center">
             <Sider>
                 <Menu>
-                  <MenuGroup title="菜单选项">
-                      <MenuItem name="1">
+                  <!-- <Submenu>
+                      <template slot="title">
+                        <Icon type="md-barcode" />
+                        WebSocket
+                      </template>
+                  </Submenu>
+                  <Submenu>
+                      <template slot="title">
+                        <Icon type="md-camera" />
+                        数据可视化
+                      </template>
+                  </Submenu> -->
+                  <MenuGroup>
+                      <MenuItem name="1" to="/socket">
                           <Icon type="md-barcode" />
                           WebSocket
                       </MenuItem>
-                      <MenuItem name="1">
+                      <MenuItem name="2" to="/datavisible">
                           <Icon type="md-camera" />
                           数据可视化
                       </MenuItem>
                   </MenuGroup>
                 </Menu>
             </Sider>
-            <Content class="content">Content</Content>
+            <Content class="content">
+              <router-view></router-view>
+            </Content>
         </Layout>
         <Footer>Footer</Footer>
     </Layout>
@@ -28,11 +42,11 @@
 </template>
 
 <script>
-  import Test from './Test.vue'
+  // import Test from './Test.vue'
   export default {
     name: 'HomePage',
   }
-  new Test().$mount('#test');    
+  // new Test().$mount('#test');    
   // 只能挂载在根节点。
 </script>
 

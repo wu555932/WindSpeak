@@ -9,7 +9,20 @@ const routes = [
     {
       path: "/home",
       name: 'HomePage',
-      component: () => import('../view/Home.vue')
+      component: () => import('../view/Home.vue'),
+      children:[
+        {
+          path: "/socket",
+          name: "SocketPage",
+          component: ()=> import('../view/Socket.vue')
+        },
+        {
+          path: "/datavisible",
+          name: "DataVisible",
+          component: ()=> import('../view/DataVisible.vue')
+        },
+
+      ]
     },
     {
       path: "/login",

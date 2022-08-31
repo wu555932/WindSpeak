@@ -12,8 +12,11 @@
     "core-js": "^3.8.3",
     "express": "^4.18.1",
     "mockjs": "^1.1.0",
+    "socket.io": "^4.5.1",
+    "socket.io-client": "^4.5.1",
     "view-design": "^4.7.0",
-    "vue": "^2.6.14"
+    "vue": "^2.6.14",
+    "vue-socket.io": "^3.0.10"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
