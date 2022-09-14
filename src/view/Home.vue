@@ -45,9 +45,11 @@
   // import Test from './Test.vue'
   export default {
     name: 'HomePage',
+    mounted() {
+    }
   }
-  // new Test().$mount('#test');    
-  // 只能挂载在根节点。
+  // new Test().$mount('#layout');    
+  // 可以挂载到任意dom节点。
 </script>
 
 <style lang="scss" scoped>

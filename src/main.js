@@ -13,7 +13,7 @@ Vue.use(ViewDesign);
 Vue.use(
   new SocketIO({
     debug: false,  //开启调试模式
-    connection: ClientSocketIO.connect('http://192.168.100.5:3000',{
+    connection: ClientSocketIO.connect('http://localhost:3000/',{
       transports: ['websocket'] , //默认使用请求方式
       autoConnect: false,  //是否自动连接
     })

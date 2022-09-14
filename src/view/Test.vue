@@ -1,6 +1,6 @@
 <template>
     <div>
-      <h2>数据可视化</h2>
+      <h2>数据可视化test</h2>
     </div>
 </template>
 

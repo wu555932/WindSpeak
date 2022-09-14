@@ -3,7 +3,7 @@
     <h2 class="title">Talk Window </h2>
     <!-- <input type="input" v-model="message" />
     <button style="width:50px;height:50px;" @click="init">send</button> -->
-    <ul class="textbox" id="textbox"></ul>
+    <ul class="textbox" id="textbox" @click="clickName"></ul>
     <div class="input">
       <Input ref="input" v-model="message" type="text" placeholder="Enter something..." />
       <Button type="primary" @click="send">Send</Button>
@@ -28,7 +28,7 @@ import socketClient from 'socket.io-client'
         //初始化创建一个websocket连接
         return  new Promise((resolve,reject)=> {
           try {
-            let s = socketClient('http://192.168.100.5:3000/');
+            let s = socketClient('http://127.0.0.1:3000/');
             resolve(s)
           } catch (error) {
             reject('error',error)
@@ -57,6 +57,16 @@ import socketClient from 'socket.io-client'
           this.send();
         }
       },
+      clickName(e) {
+        this.privateChat(e);
+      },
+      privateChat(event) {
+        const target = event.target;
+        let user = target.innerHTML;
+        if(target.className === 'user') {
+         this.$refs.input.value = `@${user}`
+        }
+      }
       // addNode(data) {
       //   console.log("data",data);
       //   let Profile = Vue.extend({
@@ -94,7 +104,7 @@ import socketClient from 'socket.io-client'
                                   <span class="user">${data.user}</span>
                                   ${data.CreateAt}
                                 </p>
-                                <p class="content">${data.content.client}</p>`
+                                <p class="content">${data.user == "系统" ? data.content: data.content.client} </p>`
                 ul.appendChild(li);
                 ul.scrollTop =  ul.scrollHeight;
 
